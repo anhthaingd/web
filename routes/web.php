@@ -11,7 +11,7 @@ use App\Http\Controllers\CommentLikeController;
 
 use App\Http\Controllers\PostLikeController;
 use App\Http\Controllers\UserPostController;
-
+use App\Http\Controllers\BookmarkController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -50,6 +50,9 @@ Route::delete('/comments/{comment}',[CommentsController::class,'destroy'])->name
 Route::post('/comments/{comment}/likes',[CommentLikeController::class,'store'])->name('comments.likes');
 Route::delete('/comments/{comment}/likes',[CommentLikeController::class,'destroy'])->name('comments.likes');
 
+Route::get('/bookmarks',[BookmarkController::class,'index'])->name('bookmarks');//Done
+Route::post('/posts/{post}/bookmark',[BookmarkController::class,'store'])->name('posts.bookmark');
+Route::delete('/posts/{post}/bookmark',[BookmarkController::class,'destroy'])->name('posts.bookmark');
 
 Route::get('/users/{user:username}/posts',[UserPostController::class,'index'])->name('users.posts');
 

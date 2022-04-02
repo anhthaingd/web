@@ -20,6 +20,9 @@
                 <li>
                     <a href="{{ route('posts') }}" class="p-3">Posts</a>
                 </li>
+                <li>
+                    <a href="{{ route('bookmarks') }}" class="p-3">Bookmark</a>
+                </li>
             </ul>
 
             <ul class="flex items-center">

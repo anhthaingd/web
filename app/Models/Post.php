@@ -31,4 +31,12 @@ class Post extends Model
     {
         return $this->hasMany(Comment::class);
     }
+    public function bookmarks()
+    {
+        return $this->hasMany(Bookmark::class);
+    }
+    public function bookmarkedBy(User $user)
+    {
+        return $this->bookmarks->contains('user_id', $user->id);
+    }
 }
